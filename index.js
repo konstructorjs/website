@@ -17,5 +17,7 @@ app.add(new marko());
 app.add(new router());
 
 app.get('/', 'home/index');
+app.get('/guides', 'guides/index');
+app.get('/docs', 'docs/index');
 
 app.listen();
