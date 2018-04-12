@@ -11,10 +11,13 @@
   </head>
 
   <body>
+    <include('./_navbar.marko', input) />
+    
     <main role="main" id="app">
       <include(input.main) />
     </main>
 
+    <include('./_footer.marko', input) />
     <import-javascripts assets=input.assets />
   </body>
 </html>

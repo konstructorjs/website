@@ -1,48 +1,66 @@
 <render ...input>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
-  <style>
-    .is-indigo {
-      background: #3f51b5;
-    }
-
-    .code {
-      background: inherit;
-      color: inherit;
-      padding-left: 0px;
-      padding-right: 0px;
-    }
-  </style>
-  <section class="hero is-fullheight is-indigo">
+  <section class="hero is-medium is-primary">
     <div class="hero-body">
-      <div class="container has-text-centered">
-        <h1 class="title has-text-white">
-          Hello konstructor, welcome to konstructor.
+      <div class="container">
+        <h1 class="title">
+          more than a boilerplate, less than a framework.
         </h1>
-        <h2 class="subtitle has-text-white">
-          To get started, edit the <code class="code">`src/home/index/index.marko`</code> file.
+        <h2 class="subtitle">
+          a simple and intuitive node.js framework.
         </h2>
-        <div class="buttons is-centered">
-          <a href="https://github.com/konstructorjs/konstructor" target="_blank" class="button is-medium is-outlined is-light">
-            <span class="icon">
-              <i class="fab fa-github"></i>
-            </span>
-            <span>GitHub</span>
-          </a>
-          <a href="https://konstructor.js.org/guides" target="_blank" class="button is-medium is-success">
-            <span class="icon">
-              <i class="fas fa-book"></i>
-            </span>
-            <span>Guides</span>
-          </a>
-          <a href="https://konstructor.js.org/docs" target="_blank" class="button is-medium is-danger">
-            <span class="icon">
-              <i class="fas fa-code"></i>
-            </span>
-            <span>Docs</span>
-          </a>
+      </div>
+    </div>
+  </section>
+  <if(input.meta)>
+    <section class="section">
+      <div class="container">
+        <nav class="level">
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading lowercase">version</p>
+              <p class="title">${input.version}</p>
+              stable
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading lowercase">downloads this month</p>
+              <p class="title">${input.downloads}</p>
+              from npm
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading lowercase">last commit</p>
+              <p class="title">${input.commit.ago}</p>
+              by ${input.commit.author}
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <hr>
+  </if>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column has-text-centered content">
+          <p class="title no-pad-bottom">koa</p>
+          <p>konstructor uses <a href="http://koajs.com" target="_blank">koa</a> under the hood, so you can use your existing middleware. no need to re-write everything from scratch</p>
+        </div>
+        <div class="column has-text-centered content">
+          <p class="title no-pad-bottom">marko</p>
+          <p>konstructor uses <a href="https://markojs.com" target="_blank">marko</a> for rendering templates allowing your pages to be complex, and render almost instantly</p>
+        </div>
+        <div class="column has-text-centered content">
+          <p class="title no-pad-bottom">laravel-mix</p>
+          <p>konstructor uses <a href="https://github.com/JeffreyWay/laravel-mix" target="_blank">laravel-mix</a> to compile js and css assets from vue to bootstrap with a simple API powered by webpack.</p>
+        </div>
+        <div class="column has-text-centered content">
+          <p class="title no-pad-bottom">live-reload</p>
+          <p>konstructor uses <a href="http://livereload.com" target="_blank">live reload</a> to help you boost your productivity by reloading your changes for you as you develop</p>
         </div>
       </div>
     </div>
   </section>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </render>
