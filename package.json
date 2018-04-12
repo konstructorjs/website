@@ -7,7 +7,9 @@
     "start": "konstructor-scripts start",
     "dev": "konstructor-scripts dev",
     "watch": "konstructor-scripts watch",
-    "build": "konstructor-scripts build"
+    "build": "konstructor-scripts build",
+    "test": "npm run lint",
+    "lint": "eslint *.js assets src"
   },
   "keywords": [
     "konstructor"
