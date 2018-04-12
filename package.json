@@ -1,0 +1,36 @@
+{
+  "name": "konstructor",
+  "description": "",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "konstructor-scripts start",
+    "dev": "konstructor-scripts dev",
+    "watch": "konstructor-scripts watch",
+    "build": "konstructor-scripts build"
+  },
+  "keywords": [
+    "konstructor"
+  ],
+  "private": true,
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "laravel-mix": "^2.1.11",
+    "nodemon": "^1.17.3"
+  },
+  "peerDependencies": {
+    "marko": "^4.8.0"
+  },
+  "dependencies": {
+    "@konstructor/assets": "^1.0.0",
+    "@konstructor/error": "^1.0.0",
+    "@konstructor/koa": "^1.0.0",
+    "@konstructor/konstructor": "^2.0.0",
+    "@konstructor/logger": "^1.0.0",
+    "@konstructor/marko": "^1.0.0",
+    "@konstructor/router": "^1.0.0",
+    "@konstructor/static": "^1.0.0"
+  }
+}
