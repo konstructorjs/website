@@ -1,7 +1,7 @@
 const axios = require('axios');
 const moment = require('moment');
 
-const requestGithub = async url => axios.get(`${url}?client_id=0ad79ba643bb67562b43&client_secret=0fddff9da710f57a4b25e76196d28646c78ebb7d`);
+const requestGithub = async url => axios.get(`${url}?client_id=${process.env.GITHUB_CLIENT_ID}&client_secret=${process.env.GITHUB_CLIENT_SECRET}`);
 
 module.exports = class index {
   async handler() {
