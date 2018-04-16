@@ -10,3 +10,9 @@ install:
 
 script:
   - npm test
+
+after_success:
+  - git remote add deploy $SERVER_USERNAME:$SERVER_IP
+  - git push deploy master
+branches:
+  - master
