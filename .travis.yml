@@ -12,7 +12,7 @@ script:
   - npm test
 
 after_success:
-  - git remote add deploy $SERVER_USERNAME:$SERVER_IP
+  - git remote add deploy $SERVER_USERNAME@$SERVER_IP:$SERVER_APP_NAME
   - git push deploy master
 branches:
   - master
