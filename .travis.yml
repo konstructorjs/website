@@ -12,6 +12,7 @@ script:
   - npm test
 
 after_success:
+  - ssh-keyscan -H $SERVER_IP >> ~/.ssh/known_hosts
   - git remote add deploy $SERVER_USERNAME@$SERVER_IP:$SERVER_APP_NAME
   - git push deploy master
 branches:
