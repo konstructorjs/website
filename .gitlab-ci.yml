@@ -6,6 +6,7 @@ cache:
 
 stages:
   - test
+  - deploy
 
 test:
   stage: test
@@ -14,3 +15,16 @@ test:
    - npm test
   tags:
     - docker
+
+deploy:
+  stage: deploy
+  before_script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - git remote add deploy $SERVER_USERNAME@$SERVER_HOST:$SERVER_NAME
+    - git push deploy master
